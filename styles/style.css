@@ -74,7 +74,6 @@ top blogs styles
 .blog {
     display: flex;
     gap: 16px;
-    align-items: center;
 }
 
 .blog .thumbnail img {
@@ -82,9 +81,6 @@ top blogs styles
     height: 127px;
 }
 
-.blog-info {
-    margin-bottom: 20px;
-}
 
 .blog-title {
     font-size: 20px;
@@ -157,4 +153,45 @@ latest course styles
     margin-left: 30px;
 }
 
+/* ----------
+Media Query
+------------ */
 
+/* small device (mobile) */
+@media only screen and (max-width: 600px) {
+
+    .container {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .players,.blogs, .courses {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 20px;
+    }
+    
+    .player, .blog {
+      flex-direction: column;
+      gap: 0;
+      margin-top: 10px;
+    }
+}
+
+/* medium device (tablet) */
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .players,.blogs, .courses {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 20px;
+    }
+
+    .player, .blog {
+        flex-direction: column;
+        gap: 0;
+        margin-top: 10px;
+      }
+}
